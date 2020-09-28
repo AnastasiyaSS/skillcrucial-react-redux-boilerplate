@@ -77,12 +77,7 @@ server.get('/api/v1/users', async (req, res) => {
   const newListOfUsers = [ ...users, { ...newUser, id: newUserId }]
   saveFile(newListOfUsers)
   res.json({ status: 'success', id: newUserId })
-}) // read + write 
-
-server.delete('/api/v1/users', (req, res) => {
-  const users = unlink(`${__dirname}/users.json`)
-  res.json(users)
-}) // write 
+}) 
 
 server.patch('/api/v1/users/:userId', async (req, res) => { 
   const { userId } = req.params
@@ -94,16 +89,20 @@ server.patch('/api/v1/users/:userId', async (req, res) => {
   },[])
   saveFile(list)
   res.json({status: 'success', id: userId})
-}) // read + write 
+}) 
 
 server.delete('/api/v1/users/:userId', async (req, res) => {
   const { userId } = req.params 
   const users = await readWrite()
-  const filterUser = users.filter(it => it.id === +userId)
+  const filterUser = users.filter(it => it.id !== +userId)
   saveFile(filterUser)
   res.json({status: 'success', id: userId})
-}) // read + write 
+})
 
+server.delete('/api/v1/users', (req, res) => {
+  const users = unlink(`${__dirname}/users.json`)
+  res.json(users)
+}) 
 
 server.use('/api/', (req, res) => {
   res.status(404)
