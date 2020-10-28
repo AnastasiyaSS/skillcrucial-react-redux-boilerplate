@@ -6,6 +6,7 @@ import Header from './header'
 import Dashboard from './dashboard'
 import Main from './main'
 import Profile from './profile'
+import Counter from './counter'
 // import wave from '../assets/images/wave.jpg'
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
           <Route exact path="/dashboard" component={() => <Dashboard />} />
           <Route exact path="/dashboard/main" component={() => <Main />} />
           <Route exact path="/dashboard/profile/:user" component={() => <Profile />} />
+          <Route exact path="/counter" component={() => <Counter />} />          
         </Switch>
     </div>
   )
