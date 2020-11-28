@@ -108,7 +108,6 @@ server.get('/', (req, res) => {
   })
 })
 
-
 server.get('/*', (req, res) => {
   const appStream = renderToStaticNodeStream(<Root location={req.url} context={{}} />)
   res.write(htmlStart)
