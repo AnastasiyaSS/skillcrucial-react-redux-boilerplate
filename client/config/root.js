@@ -12,6 +12,7 @@ import Counter from '../components/useState'
 import User from '../components/input'
 import DummyView from '../components/dummy-view'
 import NotFound from '../components/404'
+// import Root from '../components/w13-practice'
 
 import Startup from './startup'
 
@@ -88,4 +89,4 @@ const RootComponent = (props) => {
   )
 }
 
-export default RootComponent 
+export default RootComponent

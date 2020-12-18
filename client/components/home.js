@@ -8,6 +8,7 @@ import Main from './main'
 import Profile from './profile'
 import Counter from './useState'
 import User from './input'
+
 // import wave from '../assets/images/wave.jpg'
 
 const Home = () => {
@@ -15,13 +16,13 @@ const Home = () => {
     <div>
       <Head title="Hello" />
       <Header />
-        <Switch>
-          <Route exact path="/dashboard" component={() => <Dashboard />} />
-          <Route exact path="/dashboard/main" component={() => <Main />} />
-          <Route exact path="/dashboard/profile/:user" component={() => <Profile />} />
-          <Route exact path="/counter" component={() => <Counter />} />   
-          <Route exact path="/input" component={() => <User />} />       
-        </Switch>
+      <Switch>
+        <Route exact path="/dashboard" component={() => <Dashboard />} />
+        <Route exact path="/dashboard/main" component={() => <Main />} />
+        <Route exact path="/dashboard/profile/:user" component={() => <Profile />} />
+        <Route exact path="/counter" component={() => <Counter />} />
+        <Route exact path="/input" component={() => <User />} />
+      </Switch>
     </div>
   )
 }
@@ -31,11 +32,11 @@ Home.propTypes = {}
 export default Home
 
 /*   const [counter, setCounterNew] = useState(0)
-      <img alt="wave" src="images/wave.jpg" />  
+      <img alt="wave" src="images/wave.jpg" />
 
       <button type="button" onClick={() => setCounterNew(counter + 1)}>
         updateCounter
       </button>
-      <div> Hello World Dashboard {counter} </div> 
+      <div> Hello World Dashboard {counter} </div>
 
 */
